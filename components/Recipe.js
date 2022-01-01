@@ -28,7 +28,7 @@ export default function Recipe(props) {
         </Text>
       </Box>
       <Box>
-        <Instructions amount={amount} ext={props.ext} recipeFunction={props.recipeFunction} />
+        <Instructions amount={amount} ext={props.ext} recipeFunction={props.recipeFunction} unit={unit} />
       </Box>
     </VStack>
   );

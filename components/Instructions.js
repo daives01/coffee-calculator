@@ -5,7 +5,7 @@ export default function Instructions(props) {
   const [recipe, updateRecipe] = useState([]);
   useEffect(() => {
     if (props.amount) {
-      updateRecipe(props.recipeFunction(props.amount));
+      updateRecipe(props.recipeFunction(props.unit == 'oz' ? props.amount * 28.35 : props.amount));
     } else {
       updateRecipe([])
     }

@@ -6,8 +6,5 @@ const DEFAULTVALUE = 12;
 const TITLE = "V60 Instructions";
 
 export default function V60Recipe() {
-
-  return (
-    <Recipe defaultValue={DEFAULTVALUE} title={TITLE} recipeFunction={V60}/>
-  );
+  return <Recipe defaultValue={DEFAULTVALUE} title={TITLE} recipeFunction={V60} />;
 }
