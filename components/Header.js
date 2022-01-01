@@ -199,7 +199,7 @@ const NAV_ITEMS = [
       },
       {
         label: "Slow",
-        href: "/",
+        href: "/aeropress/aeropress-1",
       },
       {
         label: "Inverted",
