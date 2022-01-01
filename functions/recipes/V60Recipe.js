@@ -1,4 +1,4 @@
-export default function V60(amtOfWater) {
+export default function V60Recipe(amtOfWater) {
   return buildInstructions(amtOfWater);
 }
 
