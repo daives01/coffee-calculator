@@ -77,7 +77,7 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? "#"}
+                href={navItem.href ?? "/"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -150,7 +150,7 @@ const MobileNavItem = ({ label, children, href }) => {
       <Flex
         py={2}
         as={Link}
-        href={href ?? "#"}
+        href={href ?? "/"}
         justify={"space-between"}
         align={"center"}
         _hover={{
@@ -168,7 +168,7 @@ const MobileNavItem = ({ label, children, href }) => {
           {children &&
             children.map((child) => (
               <Link key={child.label} py={2} href={child.href}>
-                {child.label}
+                {child.label}{" "}
               </Link>
             ))}
         </Stack>
@@ -187,19 +187,23 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: "V60",
-    href: "v60-recipe",
+    href: "/v60-recipe",
   },
   {
     label: "Aeropress",
+    href: "/",
     children: [
       {
         label: "Fast (stir)",
+        href: "/",
       },
       {
         label: "Slow",
+        href: "/",
       },
       {
         label: "Inverted",
+        href: "/",
       },
     ],
   },
