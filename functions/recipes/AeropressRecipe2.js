@@ -1,4 +1,4 @@
-export default function AeropressRecipe1(amtOfWater) {
+export default function AeropressRecipe2(amtOfWater) {
   return buildInstructions(amtOfWater);
 }
 
@@ -18,16 +18,20 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 2",
-      desc: `Start the timer and pour in ${amtOfWater} grams of water.`,
+      desc: `Pour in ${amtOfWater / 2} grams of water.`,
     },
     {
       title: "Step 3",
-      desc: `At the two minute mark, give the aeropress a gentle swirl.`,
+      desc: `Using the stir stick, gently stir for around 10 seconds.`,
     },
     {
       title: "Step 4",
-      desc: `Wait 30 more seconds, then begin to plunge slowly until you reach the bottom.`
+      desc: `Plunge slowly until you reach the bottom.`
     },
+    {
+      title: "Step 5",
+      desc: `You now have ${amtOfWater / 2} of concentrated coffee. You can dilute it with equal parts water or steamed milk.` 
+    }
   ];
 
   return instructions;

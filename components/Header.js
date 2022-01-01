@@ -191,15 +191,14 @@ const NAV_ITEMS = [
   },
   {
     label: "Aeropress",
-    href: "/",
     children: [
       {
-        label: "Fast (stir)",
-        href: "/",
+        label: "2m30s brew",
+        href: "/aeropress/aeropress-1",
       },
       {
-        label: "Slow",
-        href: "/aeropress/aeropress-1",
+        label: "Fast Concentrate",
+        href: "/aeropress/aeropress-2",
       },
       {
         label: "Inverted",
