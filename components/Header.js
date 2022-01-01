@@ -191,6 +191,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Aeropress",
+    href:"/aeropress/aeropress-1",
     children: [
       {
         label: "2m30s brew",
