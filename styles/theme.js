@@ -10,6 +10,7 @@ export const theme = extendTheme({
     darkTan: "#806443ff",
     bone: "#E3DBC9",
     offWhite: "#EDE0D4",
+    warning: "red"
   },
   fonts: {
     heading: "Open Sans",

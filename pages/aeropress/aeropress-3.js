@@ -6,5 +6,5 @@ const DEFAULTVALUE = 12;
 const TITLE = "Aeropress Inverted Method";
 
 export default function Aeropress2() {
-  return <Recipe maxAmount={600} defaultValue={DEFAULTVALUE} title={TITLE} recipeFunction={AeropressRecipe3} />;
+  return <Recipe maxAmount={300} defaultValue={DEFAULTVALUE} title={TITLE} recipeFunction={AeropressRecipe3} />;
 }

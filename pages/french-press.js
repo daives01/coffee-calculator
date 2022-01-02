@@ -6,5 +6,5 @@ const DEFAULTVALUE = 12;
 const TITLE = "French Press";
 
 export default function FrenchPressRecipe() {
-  return <Recipe maxAmount={700} defaultValue={DEFAULTVALUE} title={TITLE} recipeFunction={FrenchPress} />;
+  return <Recipe maxAmount={1000} defaultValue={DEFAULTVALUE} title={TITLE} recipeFunction={FrenchPress} />;
 }
