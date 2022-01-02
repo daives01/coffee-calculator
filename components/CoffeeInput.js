@@ -10,7 +10,7 @@ export default function CoffeeInput(props) {
       </Box>
       <Editable
         minW="10px"
-        maxW="55px"
+        maxW="60px"
         defaultValue={props.defaultValue}
         value={props.amount ? props.amount : null}
         placeholder={"amount"}
