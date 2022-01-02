@@ -4,7 +4,7 @@ import CoffeeInput from "../components/CoffeeInput";
 import Instructions from "./Instructions";
 
 export default function Recipe(props) {
-  const [amount, setAmount] = useState(12);
+  const [amount, setAmount] = useState(props.defaultValue);
   const [unit, setUnit] = useState();
   const handleChange = (event) => setAmount(event.target.value);
 
@@ -20,11 +20,8 @@ export default function Recipe(props) {
       <Box>
         <Heading color="darkBrown">{props.title}</Heading>
       </Box>
-      <CoffeeInput defaultValue={props.defaultValue ? props.defaultValue : 12} handleChange={handleChange} />
+      <CoffeeInput defaultValue={props.defaultValue ? props.defaultValue : 12} handleChange={handleChange} maxAmount={props.maxAmount}/>
       <Box>
-        <Text>
-          Recipe to make {amount} {unit} coffee
-        </Text>
       </Box>
       <Box>
         <Instructions amount={amount} ext={props.ext} recipeFunction={props.recipeFunction} unit={unit} />
