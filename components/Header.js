@@ -69,7 +69,7 @@ const DesktopNav = () => {
                   color: linkHoverColor,
                 }}
               >
-                <NextLink href={navItem.href ?? "#"}>
+                <NextLink href={!navItem.children ? navItem.href : "" }>
                   <a>{navItem.label}</a>
                 </NextLink>
               </Box>
@@ -133,7 +133,7 @@ const MobileNavItem = ({ label, children, href, closeDropdown }) => {
 
   return (
     <Stack spacing={4} onClick={children ? onToggle : closeDropdown}>
-      <NextLink passHref href={href ?? "#"}>
+      <NextLink passHref href={!children ? href : ""}>
         <Flex
           py={2}
           as={Link}
@@ -173,13 +173,14 @@ const MobileNavItem = ({ label, children, href, closeDropdown }) => {
 //   href?: string;
 // }
 
-const NAV_ITEMS = [
+export const NAV_ITEMS = [
   {
     label: "V60",
     href: "/v60-recipe",
   },
   {
     label: "Aeropress",
+    href: "/aeropress/aeropress-1",
     children: [
       {
         label: "My Go-To 2m30s Brew",

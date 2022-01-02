@@ -1,6 +1,6 @@
-import Head from "next/head";
 import { Box, Heading, Container, Text, Button, Stack } from "@chakra-ui/react";
 import Link from "next/link";
+import { NAV_ITEMS } from "./Header";
 
 export default function CallToActionWithAnnotation() {
   return (
@@ -15,19 +15,12 @@ export default function CallToActionWithAnnotation() {
             </Text>
           </Heading>
           <Text color={"darkBrown"}>Enter your desired amount of brewed coffee and follow the instructions!</Text>
-          <Stack direction={"column"} spacing={3} align={"center"} alignSelf={"center"} position={"relative"}>
-            <Button
-              bg={"olive"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "creme",
-              }}
-            >
-              <Link href="/v60-recipe">
-                <a>Make a V60</a>
-              </Link>
-            </Button>
+          <Stack spacing={3} align={"center"} alignSelf={"center"} position={"relative"}>
+            <Box>
+              {NAV_ITEMS.map((navItem) => (
+                <ActionButton key={navItem.label} {...navItem} />
+              ))}
+            </Box>
             <Button variant={"link"} color="darkBrown" size={"sm"}>
               <Link href="https://github.com/daives01">
                 <a>See my Github</a>
@@ -37,5 +30,24 @@ export default function CallToActionWithAnnotation() {
         </Stack>
       </Container>
     </>
+  );
+}
+
+function ActionButton(props) {
+  return (
+    <Button
+      bg={"darkBrown"}
+      color={"bone"}
+      rounded={"full"}
+      px={6}
+      m={1}
+      _hover={{
+        bg: "olive",
+      }}
+    >
+      <Link href={props.href ?? "#"}>
+        <a>{props.label}</a>
+      </Link>
+    </Button>
   );
 }
