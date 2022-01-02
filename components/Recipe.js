@@ -18,7 +18,7 @@ export default function Recipe(props) {
   useEffect(() => {
     if (amount) {
       setUnit(amount > 64 ? "g" : "oz");
-      setIsValid(amount <= props.maxAmount)
+      setIsValid(isInRange(amount, props.maxAmount, unit))
     } else {
       setUnit();
     }
@@ -46,4 +46,8 @@ export default function Recipe(props) {
 
 function isValidInput(value) {
   return !isNaN(value) && value.toString().length < 7;
+}
+
+function isInRange(value, maxAmount, unit) {
+  return unit == 'g' ? value <= maxAmount : (value * 28.35) <= maxAmount;
 }
