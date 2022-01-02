@@ -198,7 +198,7 @@ const NAV_ITEMS = [
       },
       {
         label: "Inverted",
-        href: "/",
+        href: "/aeropress/aeropress-3",
       },
     ],
   },
