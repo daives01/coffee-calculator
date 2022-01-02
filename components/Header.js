@@ -203,4 +203,8 @@ const NAV_ITEMS = [
       },
     ],
   },
+  {
+    label: "French Press",
+    href: "/french-press"
+  }
 ];
