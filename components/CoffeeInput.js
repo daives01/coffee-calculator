@@ -1,23 +1,42 @@
-import { Box, NumberInput, NumberInputField, Text } from "@chakra-ui/react";
+import { Box, Editable, EditableInput, EditablePreview, HStack, Text} from "@chakra-ui/react";
 import React from "react";
 
 export default function CoffeeInput(props) {
+
   return (
-    <Box>
-      <NumberInput
-        keepWithinRange={false}
-        clampValueOnBlur={false}
-        max={props.maxAmount ?? 10000}
+    <HStack>
+      <Box>
+        <Text>Recipe for</Text>
+      </Box>
+      <Editable
+        w="50px"
         defaultValue={props.defaultValue}
+        value={props.amount ? props.amount : 0}
         borderRadius="lg"
         color="darkBrown"
         backgroundColor="creme"
         errorBorderColor="danger"
         focusBorderColor="darkBrown"
-        inputMode="numeric"
+        variant={"flushed"}
+        type={"numeric"}
+
       >
-        <NumberInputField onChange={props.handleChange} placeholder="Amount of Coffee" />
-      </NumberInput>
-    </Box>
+        <EditablePreview />
+        <EditableInput onChange={props.handleChange}/>
+      </Editable>
+        <Box>
+        <OzAndGrams unit={props.unit} amount={props.amount} />
+      </Box>
+    </HStack>
   );
+}
+
+function OzAndGrams(props) {
+  if (!props.amount) {
+    return <></>;
+  } else if (props.unit == "oz") {
+    return <Text>oz of Brewed Coffee ({(props.amount * 28.35).toFixed(1)} g)</Text>;
+  } else {
+    return <Text>g of Brewed Coffee ({(props.amount / 28.35).toFixed(1)} oz)</Text>;
+  }
 }
