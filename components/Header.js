@@ -12,6 +12,7 @@ import {
   PopoverContent,
   useBreakpointValue,
   useDisclosure,
+  PopoverCloseButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
@@ -53,11 +54,13 @@ const DesktopNav = () => {
   const linkHoverColor = "darkTan";
   const popoverContentBgColor = "creme";
 
+  const { onOpen, onClose, isOpen } = useDisclosure();
+
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
+          <Popover isOpen={isOpen} onOpen={onOpen} onClose={onClose} trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Box
                 p={2}
@@ -69,7 +72,7 @@ const DesktopNav = () => {
                   color: linkHoverColor,
                 }}
               >
-                <NextLink href={!navItem.children ? navItem.href : "" }>
+                <NextLink href={!navItem.children ? navItem.href : ""}>
                   <a>{navItem.label}</a>
                 </NextLink>
               </Box>
@@ -77,7 +80,7 @@ const DesktopNav = () => {
 
             {navItem.children && (
               <PopoverContent border={0} boxShadow={"xl"} bg={popoverContentBgColor} p={4} rounded={"xl"} minW={"sm"}>
-                <Stack>
+                <Stack onClick={onClose}>
                   {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
                   ))}
