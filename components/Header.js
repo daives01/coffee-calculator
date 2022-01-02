@@ -15,20 +15,14 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Box>
-      <Flex
-        minH={"60px"}
-        py={{ base: 4 }}
-        px={{ base: 4 }}
-        mb={{ base: 4 }}
-        align={"center"}
-        bg={"offWhite"}
-      >
+      <Flex minH={"60px"} py={{ base: 4 }} px={{ base: 4 }} mb={{ base: 4 }} align={"center"} bg={"offWhite"}>
         <Flex flex={{ base: 1, md: "auto" }} ml={{ base: -2 }} display={{ base: "flex", md: "none" }}>
           <IconButton
             onClick={onToggle}
@@ -38,9 +32,9 @@ export default function Header() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Link textAlign={useBreakpointValue({ base: "center", md: "left" })} fontFamily={"heading"} href="/" color="darkBrown">
-            <Text>Coffee Calculator</Text>
-          </Link>
+          <NextLink passHref textAlign={useBreakpointValue({ base: "center", md: "left" })} fontFamily={"heading"} href="/" color="darkBrown">
+            <a>Coffee Calculator</a>
+          </NextLink>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -66,9 +60,8 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
+              <Box
                 p={2}
-                href={navItem.href ?? null}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -77,8 +70,10 @@ const DesktopNav = () => {
                   color: linkHoverColor,
                 }}
               >
-                {navItem.label}
-              </Link>
+                <NextLink href={navItem.href ?? "#"}>
+                  <a>{navItem.label}</a>
+                </NextLink>
+              </Box>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -99,13 +94,14 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
-    <Link href={href} role={"group"} display={"block"} p={2} rounded={"md"} _hover={{ bg: "bone" }}>
+    <Link role={"group"} display={"block"} p={2} rounded={"md"} _hover={{ bg: "bone" }}>
       <Stack direction={"row"} align={"center"}>
         <Box>
-          <Text transition={"all .3s ease"} _groupHover={{ color: "darkTan" }} fontWeight={500}>
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
+          <NextLink href={href ?? "#"}>
+            <Text transition={"all .3s ease"} _groupHover={{ color: "darkTan" }} fontWeight={500}>
+              {label}
+            </Text>
+          </NextLink>
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -141,16 +137,17 @@ const MobileNavItem = ({ label, children, href }) => {
       <Flex
         py={2}
         as={Link}
-        href={href ?? null}
         justify={"space-between"}
         align={"center"}
         _hover={{
           textDecoration: "none",
         }}
       >
-        <Text fontWeight={600} color={"darkBrown"}>
-          {label}
-        </Text>
+        <NextLink passHref href={href ?? "#"}>
+          <Text fontWeight={600} color={"darkBrown"}>
+            {label}
+          </Text>
+        </NextLink>
         {children && <Icon as={ChevronDownIcon} transition={"all .25s ease-in-out"} transform={isOpen ? "rotate(180deg)" : ""} w={6} h={6} />}
       </Flex>
 
@@ -158,9 +155,9 @@ const MobileNavItem = ({ label, children, href }) => {
         <Stack mt={2} pl={4} borderLeft={1} borderStyle={"solid"} borderColor={"darkBrown"} align={"start"}>
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <NextLink key={child.label} py={2} href={child.href}>
                 <a>{child.label}</a>
-              </Link>
+              </NextLink>
             ))}
         </Stack>
       </Collapse>
