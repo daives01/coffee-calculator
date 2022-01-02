@@ -7,19 +7,17 @@ export default function StepBox(props) {
       <Box
         width="50vh"
         maxHeight="30vh"
-        backgroundColor="cyan.500"
+        backgroundColor="creme"
         display="flex"
         flexDirection="column"
         justifyContent="center"
         alignItems="flex-start"
         p="15px"
         borderRadius='lg'
-        bgGradient="linear(to right, cyan.500,whiteAlpha.500)"
       >
         <Tag
-          colorScheme="gray"
-          backgroundColor="cyan.500"
-          bgGradient="linear(to right, cyan.200,green.200)"
+         color="creme"
+          backgroundColor="darkBrown"
         >
           {props.step.title}
         </Tag>

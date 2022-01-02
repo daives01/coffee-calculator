@@ -28,9 +28,10 @@ export default function CallToActionWithAnnotation() {
           <Heading
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            color='darkBrown'
             lineHeight={'110%'}>
             Coffee Calculator 1.0<br />
-            <Text as={'span'} color={'green.400'}>
+            <Text as={'span'} color='olive'>
              By Daniel Ives 
             </Text>
           </Heading>
@@ -44,17 +45,17 @@ export default function CallToActionWithAnnotation() {
             alignSelf={'center'}
             position={'relative'}>
             <Button
-              bg={'primary'}
+              bg={'olive'}
               rounded={'full'}
               px={6}
               _hover={{
-                bg: 'secondary',
+                bg: 'creme',
               }}>
                   <Link href='/v60-recipe'>
                       <a>Make a V60</a>
                   </Link>
             </Button>
-            <Button variant={'link'} color='secondary' size={'sm'}>
+            <Button variant={'link'} color='darkBrown' size={'sm'}>
                 <Link href="https://github.com/daives01">
                     <a>See my Github</a>
                 </Link>
