@@ -22,7 +22,7 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 3",
-      desc: `At the two minute mark, give the aeropress a gentle swirl.`,
+      desc: `At the two minute mark, give the Aeropress a gentle swirl.`,
     },
     {
       title: "Step 4",
