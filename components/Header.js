@@ -195,7 +195,7 @@ const MobileNavItem = ({ label, children, href, closeDropdown }) => {
 
 export const NAV_ITEMS = [
   {
-    label: "V60",
+    label: "Hario V60",
     href: "/v60-recipe",
   },
   {
