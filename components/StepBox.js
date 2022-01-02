@@ -5,7 +5,8 @@ export default function StepBox(props) {
   return (
     <Stack spacing={4} opacity={1} boxShadow="Outline" mb="10px">
       <Box
-        width="50vh"
+        maxWidth="80vw"
+        width="500px"
         maxHeight="30vh"
         backgroundColor="creme"
         display="flex"
@@ -13,17 +14,12 @@ export default function StepBox(props) {
         justifyContent="center"
         alignItems="flex-start"
         p="15px"
-        borderRadius='lg'
+        borderRadius="lg"
       >
-        <Tag
-         color="creme"
-          backgroundColor="darkBrown"
-        >
+        <Tag color="creme" mb="10px" p="6px" backgroundColor="darkBrown" fontWeight="900">
           {props.step.title}
         </Tag>
-        <Text>
-          {props.step.desc}
-        </Text>
+        <Text>{props.step.desc}</Text>
       </Box>
     </Stack>
   );
