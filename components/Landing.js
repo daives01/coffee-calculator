@@ -35,7 +35,7 @@ export default function CallToActionWithAnnotation() {
              By Daniel Ives 
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
+          <Text color={'darkBrown'}>
               Enter your desired amount of brewed coffee and follow the instructions!
           </Text>
           <Stack
