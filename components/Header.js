@@ -11,7 +11,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useColorModeValue,
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -24,9 +23,11 @@ export default function Header() {
     <Box>
       <Flex
         minH={"60px"}
-        py={{ base: 2 }}
+        py={{ base: 4 }}
         px={{ base: 4 }}
+        mb={{ base: 4 }}
         align={"center"}
+        bg={"offWhite"}
       >
         <Flex flex={{ base: 1, md: "auto" }} ml={{ base: -2 }} display={{ base: "flex", md: "none" }}>
           <IconButton
@@ -37,12 +38,7 @@ export default function Header() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Link
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            href="/"
-            color="darkBrown"
-          >
+          <Link textAlign={useBreakpointValue({ base: "center", md: "left" })} fontFamily={"heading"} href="/" color="darkBrown">
             <Text>Coffee Calculator</Text>
           </Link>
 
@@ -103,7 +99,7 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
-    <Link href={href} role={"group"} display={"block"} p={2} rounded={"md"} _hover={{ bg: 'bone'}}>
+    <Link href={href} role={"group"} display={"block"} p={2} rounded={"md"} _hover={{ bg: "bone" }}>
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text transition={"all .3s ease"} _groupHover={{ color: "darkTan" }} fontWeight={500}>
@@ -163,9 +159,7 @@ const MobileNavItem = ({ label, children, href }) => {
           {children &&
             children.map((child) => (
               <Link key={child.label} py={2} href={child.href}>
-                <a>
-                {child.label}
-                </a>
+                <a>{child.label}</a>
               </Link>
             ))}
         </Stack>
@@ -205,6 +199,6 @@ const NAV_ITEMS = [
   },
   {
     label: "French Press",
-    href: "/french-press"
-  }
+    href: "/french-press",
+  },
 ];

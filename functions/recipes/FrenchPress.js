@@ -22,7 +22,7 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 2",
-      desc: `Start the timer and pour in ${amtOfWater} grams of water.`,
+      desc: `Start the timer and pour in ${Number(amtOfWater).toFixed(1)} grams of water.`,
     },
     {
       title: "Step 3",

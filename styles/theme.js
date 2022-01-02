@@ -9,9 +9,7 @@ export const theme = extendTheme({
     brown: "#685634ff",
     darkTan: "#806443ff",
     bone: "#E3DBC9",
-    highlight: "#00C9A7",
-    warning: "#FFC75F",
-    danger: "#C34A36",
+    offWhite: "#EDE0D4"
   },
   fonts: {
     heading: 'Open Sans',

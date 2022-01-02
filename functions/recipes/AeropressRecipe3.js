@@ -18,7 +18,7 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 2",
-      desc: `Pour in ${amtOfWater.toFixed(1)} grams of water. (NOTE: The inverted method inherently decreases capacity)`,
+      desc: `Pour in ${Number(amtOfWater).toFixed(1)} grams of water. (NOTE: The inverted method inherently decreases capacity)`,
     },
     {
       title: "Step 3",
