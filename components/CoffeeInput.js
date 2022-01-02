@@ -9,16 +9,15 @@ export default function CoffeeInput(props) {
         <Text>Recipe for</Text>
       </Box>
       <Editable
-        w="50px"
+        minW="10px"
+        maxW="55px"
         defaultValue={props.defaultValue}
-        value={props.amount ? props.amount : 0}
+        value={props.amount ? props.amount : null}
+        placeholder={"amount"}
         borderRadius="lg"
         color="darkBrown"
         backgroundColor="creme"
-        errorBorderColor="danger"
-        focusBorderColor="darkBrown"
-        variant={"flushed"}
-        type={"numeric"}
+        px="3px"
 
       >
         <EditablePreview />
