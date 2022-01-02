@@ -18,7 +18,7 @@ export default function Recipe(props) {
   useEffect(() => {
     if (amount) {
       setUnit(amount > 64 ? "g" : "oz");
-      setIsValid(amount < props.maxAmount)
+      setIsValid(amount <= props.maxAmount)
     } else {
       setUnit();
     }
