@@ -1,8 +1,7 @@
-import { Box, Editable, EditableInput, EditablePreview, HStack, Text} from "@chakra-ui/react";
+import { Box, Editable, EditableInput, EditablePreview, HStack, Text } from "@chakra-ui/react";
 import React from "react";
 
 export default function CoffeeInput(props) {
-
   return (
     <HStack>
       <Box>
@@ -18,12 +17,11 @@ export default function CoffeeInput(props) {
         color="darkBrown"
         backgroundColor="creme"
         px="3px"
-
       >
         <EditablePreview />
-        <EditableInput onChange={props.handleChange}/>
+        <EditableInput onChange={props.handleChange} />
       </Editable>
-        <Box>
+      <Box>
         <OzAndGrams unit={props.unit} amount={props.amount} />
       </Box>
     </HStack>

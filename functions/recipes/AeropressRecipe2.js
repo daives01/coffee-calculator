@@ -26,12 +26,12 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 4",
-      desc: `Plunge slowly until you reach the bottom.`
+      desc: `Plunge slowly until you reach the bottom.`,
     },
     {
       title: "Step 5",
-      desc: `You now have ${(amtOfWater / 2).toFixed(1)} grams of concentrated coffee. You can dilute it with equal parts water or steamed milk.` 
-    }
+      desc: `You now have ${(amtOfWater / 2).toFixed(1)} grams of concentrated coffee. You can dilute it with equal parts water or steamed milk.`,
+    },
   ];
 
   return instructions;

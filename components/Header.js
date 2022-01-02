@@ -42,7 +42,7 @@ export default function Header() {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav onToggle={onToggle}/>
+        <MobileNav onToggle={onToggle} />
       </Collapse>
     </Box>
   );
@@ -120,9 +120,9 @@ const DesktopSubNav = ({ label, href }) => {
 
 const MobileNav = (props) => {
   return (
-    <Stack bg={"creme"} p={4} display={{ md: "none" }} >
+    <Stack bg={"creme"} p={4} display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} closeDropdown={props.onToggle}/>
+        <MobileNavItem key={navItem.label} {...navItem} closeDropdown={props.onToggle} />
       ))}
     </Stack>
   );

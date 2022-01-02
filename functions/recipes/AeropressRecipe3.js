@@ -26,7 +26,7 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 4",
-      desc: `Plunge slowly until you reach the bottom.`
+      desc: `Plunge slowly until you reach the bottom.`,
     },
   ];
 

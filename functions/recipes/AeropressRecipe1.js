@@ -26,7 +26,7 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 4",
-      desc: `Wait 30 more seconds, then begin to plunge slowly until you reach the bottom.`
+      desc: `Wait 30 more seconds, then begin to plunge slowly until you reach the bottom.`,
     },
   ];
 

@@ -14,7 +14,7 @@ function buildInstructions(amtOfWater = 0) {
   let instructions = [
     {
       title: "Setup",
-      desc: `Preheat your French Press with hot water (you can dump it into your mug to preheat that, too)`
+      desc: `Preheat your French Press with hot water (you can dump it into your mug to preheat that, too)`,
     },
     {
       title: "Step 1",
@@ -30,12 +30,12 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 4",
-      desc: `Wait 5 or more minutes, careful not to disturb the French Press as all of the grounds sink to the bottom.`
+      desc: `Wait 5 or more minutes, careful not to disturb the French Press as all of the grounds sink to the bottom.`,
     },
     {
       title: "Step 5",
-      desc: `Press the filter just until the surface, not all the way down, and pour the coffee through it.`
-    }
+      desc: `Press the filter just until the surface, not all the way down, and pour the coffee through it.`,
+    },
   ];
 
   return instructions;

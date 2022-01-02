@@ -10,7 +10,7 @@ export default function Recipe(props) {
     if (isValidInput(event.target.value)) {
       setAmount(event.target.value);
     }
-  }
+  };
 
   useEffect(() => {
     if (amount) {
@@ -22,7 +22,9 @@ export default function Recipe(props) {
   return (
     <VStack>
       <Box>
-        <Heading size="md" maxW="95vw" color="darkBrown">{props.title}</Heading>
+        <Heading size="md" maxW="95vw" color="darkBrown">
+          {props.title}
+        </Heading>
       </Box>
       <CoffeeInput
         defaultValue={props.defaultValue ? props.defaultValue : 12}
