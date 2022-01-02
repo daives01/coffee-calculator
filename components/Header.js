@@ -30,7 +30,7 @@ export default function Header() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex onClick={isOpen ? onToggle : null} flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <NextLink passHref textAlign={useBreakpointValue({ base: "center", md: "left" })} fontFamily={"heading"} href="/" color="darkBrown">
             <a>Coffee Calculator</a>
           </NextLink>
