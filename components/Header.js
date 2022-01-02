@@ -3,7 +3,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -43,7 +42,7 @@ export default function Header() {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav onToggle={onToggle}/>
       </Collapse>
     </Box>
   );
@@ -92,71 +91,73 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }) => {
+const DesktopSubNav = ({ label, href }) => {
   return (
     <Link role={"group"} display={"block"} p={2} rounded={"md"} _hover={{ bg: "bone" }}>
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <NextLink href={href ?? "#"}>
+      <NextLink href={href ?? "#"}>
+        <Stack direction={"row"} align={"center"}>
+          <Box>
             <Text transition={"all .3s ease"} _groupHover={{ color: "darkTan" }} fontWeight={500}>
               {label}
             </Text>
-          </NextLink>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"darkTan"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
+          </Box>
+          <Flex
+            transition={"all .3s ease"}
+            transform={"translateX(-10px)"}
+            opacity={0}
+            _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+            justify={"flex-end"}
+            align={"center"}
+            flex={1}
+          >
+            <Icon color={"darkTan"} w={5} h={5} as={ChevronRightIcon} />
+          </Flex>
+        </Stack>
+      </NextLink>
     </Link>
   );
 };
 
-const MobileNav = () => {
+const MobileNav = (props) => {
   return (
-    <Stack bg={"creme"} p={4} display={{ md: "none" }}>
+    <Stack bg={"creme"} p={4} display={{ md: "none" }} >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.label} {...navItem} closeDropdown={props.onToggle}/>
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, children, href }) => {
+const MobileNavItem = ({ label, children, href, closeDropdown }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={Link}
-        justify={"space-between"}
-        align={"center"}
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <NextLink passHref href={href ?? "#"}>
+    <Stack spacing={4} onClick={children ? onToggle : closeDropdown}>
+      <NextLink passHref href={href ?? "#"}>
+        <Flex
+          py={2}
+          as={Link}
+          justify={"space-between"}
+          align={"center"}
+          _hover={{
+            textDecoration: "none",
+          }}
+        >
           <Text fontWeight={600} color={"darkBrown"}>
             {label}
           </Text>
-        </NextLink>
-        {children && <Icon as={ChevronDownIcon} transition={"all .25s ease-in-out"} transform={isOpen ? "rotate(180deg)" : ""} w={6} h={6} />}
-      </Flex>
+          {children && <Icon as={ChevronDownIcon} transition={"all .25s ease-in-out"} transform={isOpen ? "rotate(180deg)" : ""} w={6} h={6} />}
+        </Flex>
+      </NextLink>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
         <Stack mt={2} pl={4} borderLeft={1} borderStyle={"solid"} borderColor={"darkBrown"} align={"start"}>
           {children &&
             children.map((child) => (
               <NextLink key={child.label} py={2} href={child.href}>
-                <a>{child.label}</a>
+                <Box w="100%" onClick={closeDropdown}>
+                  <a>{child.label}</a>
+                </Box>
               </NextLink>
             ))}
         </Stack>
