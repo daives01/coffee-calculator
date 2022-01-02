@@ -18,7 +18,7 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 2",
-      desc: `Pour in ${amtOfWater / 2} grams of water.`,
+      desc: `Pour in ${(amtOfWater / 2).toFixed(1)} grams of water.`,
     },
     {
       title: "Step 3",
@@ -30,7 +30,7 @@ function buildInstructions(amtOfWater = 0) {
     },
     {
       title: "Step 5",
-      desc: `You now have ${amtOfWater / 2} of concentrated coffee. You can dilute it with equal parts water or steamed milk.` 
+      desc: `You now have ${(amtOfWater / 2).toFixed(1)} grams of concentrated coffee. You can dilute it with equal parts water or steamed milk.` 
     }
   ];
 
