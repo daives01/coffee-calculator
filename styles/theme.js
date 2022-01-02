@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import '@fontsource/open-sans';
 
 export const theme = extendTheme({
   colors: {
@@ -11,6 +12,10 @@ export const theme = extendTheme({
     highlight: "#00C9A7",
     warning: "#FFC75F",
     danger: "#C34A36",
+  },
+  fonts: {
+    heading: 'Open Sans',
+    body: 'Open Sans'
   },
   styles: {
     global: (props) => ({

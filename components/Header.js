@@ -41,7 +41,7 @@ export default function Header() {
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             href="/"
-            color={useColorModeValue("gray.800", "white")}
+            color="darkBrown"
           >
             <Text>Coffee Calculator</Text>
           </Link>
@@ -60,9 +60,9 @@ export default function Header() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const linkColor = "darkBrown";
+  const linkHoverColor = "darkTan";
+  const popoverContentBgColor = "creme";
 
   return (
     <Stack direction={"row"} spacing={4}>
@@ -103,10 +103,10 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
-    <Link href={href} role={"group"} display={"block"} p={2} rounded={"md"} _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}>
+    <Link href={href} role={"group"} display={"block"} p={2} rounded={"md"} _hover={{ bg: 'bone'}}>
       <Stack direction={"row"} align={"center"}>
         <Box>
-          <Text transition={"all .3s ease"} _groupHover={{ color: "pink.400" }} fontWeight={500}>
+          <Text transition={"all .3s ease"} _groupHover={{ color: "darkTan" }} fontWeight={500}>
             {label}
           </Text>
           <Text fontSize={"sm"}>{subLabel}</Text>
@@ -120,7 +120,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"darkTan"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
