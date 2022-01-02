@@ -19,6 +19,7 @@ export const theme = extendTheme({
     global: (props) => ({
       "html, body": {
         bg: "bone",
+        pb: '5vh'
       },
     }),
   },

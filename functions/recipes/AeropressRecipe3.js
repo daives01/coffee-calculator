@@ -14,7 +14,7 @@ function buildInstructions(amtOfWater = 0) {
   let instructions = [
     {
       title: "Step 1",
-      desc: `With the aeropress upside down and plunger on, put ${amtOfCoffee.toFixed(1)} grams of fine ground coffee into the Aeropress.`,
+      desc: `With the Aeropress upside down and plunger on, put ${amtOfCoffee.toFixed(1)} grams of fine ground coffee into the Aeropress.`,
     },
     {
       title: "Step 2",
