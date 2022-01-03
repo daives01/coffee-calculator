@@ -7,7 +7,6 @@ import Warning from "./Warning";
 export default function Recipe(props) {
   const [amount, setAmount] = useState(props.defaultValue);
   const [unit, setUnit] = useState();
-  const [isValid, setIsValid] = useState(true);
   const handleChange = (event) => {
     if (isValidInput(event.target.value)) {
       setAmount(event.target.value);
@@ -18,7 +17,6 @@ export default function Recipe(props) {
   useEffect(() => {
     if (amount) {
       setUnit(amount > 64 ? "g" : "oz");
-      setIsValid(isInRange(amount, props.maxAmount, unit))
     } else {
       setUnit();
     }
@@ -30,14 +28,9 @@ export default function Recipe(props) {
           {props.title}
         </Heading>
       </Box>
-      <CoffeeInput
-        defaultValue={props.defaultValue ? props.defaultValue : 12}
-        handleChange={handleChange}
-        amount={amount}
-        unit={unit}
-      />
+      <CoffeeInput defaultValue={props.defaultValue ? props.defaultValue : 12} handleChange={handleChange} amount={amount} unit={unit} />
       <Box>
-        <Warning isValid={isValid} />
+        {!isInRange(amount, props.maxAmount, unit) && <Warning />}
         <Instructions amount={amount} ext={props.ext} recipeFunction={props.recipeFunction} unit={unit} />
       </Box>
     </VStack>
@@ -49,5 +42,5 @@ function isValidInput(value) {
 }
 
 function isInRange(value, maxAmount, unit) {
-  return unit == 'g' ? value <= maxAmount : (value * 28.35) <= maxAmount;
+  return unit == "g" ? value <= maxAmount : value * 28.35 <= maxAmount;
 }
