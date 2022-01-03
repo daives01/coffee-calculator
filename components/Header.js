@@ -32,9 +32,19 @@ export default function Header() {
           />
         </Flex>
         <Flex onClick={isOpen ? onToggle : null} flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <NextLink passHref textAlign={useBreakpointValue({ base: "center", md: "left" })} fontFamily={"heading"} href="/" color="darkBrown">
+          <Box
+            p={2}
+            fontWeight={700}
+            color={"darkBrown"}
+            _hover={{
+              textDecoration: "none",
+              color: "darkTan",
+            }}
+          >
+          <NextLink textAlign={useBreakpointValue({ base: "center", md: "left" })} fontFamily={"heading"} href="/" color="darkBrown">
             <a>Coffee Calculator</a>
           </NextLink>
+          </Box>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
